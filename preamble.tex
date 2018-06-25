@@ -1,0 +1,158 @@
+% !TEX root = main.tex
+
+%%% For testing document:
+%\usepackage{showframe}
+\usepackage{blindtext}
+\usepackage{lipsum}
+\usepackage{comment}
+%
+
+% Картинки
+\usepackage{wrapfig}
+\usepackage{array}
+\usepackage[dvipdfm]{graphicx}
+\graphicspath{{Pictures/}}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+
+%%% Работа с русским языком
+\usepackage{cmap}                   % Поиск в PDF
+\usepackage{mathtext}               % Русские буквы в фомулах
+\usepackage[T2A]{fontenc}           % Output font encoding for international characters
+\usepackage[utf8]{inputenc}        % Required for inputting international characters
+\usepackage[english,russian]{babel} % Локализация и переносы
+\usepackage{indentfirst}            % Русский стиль: отступ первого абзаца раздела
+\usepackage{textcomp} 				%символы в тексте
+
+\frenchspacing                      % Русский стиль: Промежутки между словами и между    
+% предложениями отличаться не должны. 
+%
+
+%%% Отступы:
+\usepackage[nomarginpar, top=10mm,bottom=10mm,left=7.5mm,right=8.5mm , headheight=0pt, ]{geometry}%headsep=0pt
+%
+
+%%% Дополнительная работа с математикой
+\usepackage{amsmath, amsfonts, amssymb, amsthm, mathtools} % AMS
+\usepackage{icomma} % "Умная" запятая: $0,2$ --- число, $0, 2$ --- перечисление
+%
+
+\usepackage{lastpage}
+\usepackage[nodisplayskipstretch]{setspace}  % "Умное" расстояние между строк 
+
+\usepackage{misccorr} % в заголовках появляется точка, но при ссылке на них ее нет
+\usepackage{indentfirst} % после заголовков ставится абзацный отступ
+
+
+%%%Colour
+\usepackage{soul} % Highlight text
+\usepackage[dvipsnames]{xcolor}
+
+\definecolor{Bleudefrance}{rgb}{0.19, 0.55, 0.91}
+\definecolor{Brightgreen}{rgb}{0.4, 1.0, 0.0}
+\definecolor{OliveGreen}{cmyk}{0.64,0,0.95,0.40}
+
+%\sethlcolor{Brightgreen}
+%\everymath\expandafter{\the\everymath \color{Bleudefrance}}
+%\everydisplay\expandafter{\the\everydisplay \color{Bleudefrance}}
+%
+
+\usepackage{titling}         % Customizing the title section
+\usepackage{hyperref}        % For hyperlinks in the PDF
+
+\usepackage{mathdesign}
+\usepackage{multicol}
+
+%/////////////////////
+
+\usepackage{ gensymb } % Цельсий
+\usepackage{ upgreek } % Uptau
+
+\usepackage[framemethod=tikz]{mdframed}
+\usepackage{microtype}
+
+%\renewcommand{\baselinestretch}{.8}
+\pagestyle{empty}           % Turn off header and footer
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt plus 0.5ex}
+%\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
+
+\usepackage{enumitem}
+\setlist{leftmargin=3mm} % Отступ слева у item
+%\setlist{nolistep, itemstep=0.3cm, parser=0pt}
+
+
+%%% Redefine section commands to use less space
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{0mm}%
+	{.2ex}%
+	{.2ex}%
+	{\sffamily\scriptsize\bfseries}}
+
+
+\renewcommand{\subsection}{\@startsection{subsection}{1}{0mm}%
+	{.2ex}%
+	{.2ex}%
+	{\sffamily\bfseries}}
+
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{1}{0mm}%
+	{.2ex}%
+	{.2ex}%
+	{\sffamily\bfseries}}
+
+\renewcommand{\paragraph}{\@startsection{paragraph}{1}{0mm}%
+	{.2ex}%
+	{.2ex}%
+	{\sffamily\bfseries}}
+
+\renewcommand{\subparagraph}{\@startsection{subparagraph}{1}{0mm}%
+	{.2ex}%
+	{.2ex}%
+	{\sffamily\bfseries}}
+
+\makeatother
+\setlength{\parindent}{0pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeatletter
+\renewcommand{\@listI}{%
+	\topsep=0pt }
+\makeatother
+
+\makeatletter
+\let\old@itemize=\itemize
+\def\itemize{\old@itemize
+	\setlength{\itemsep}{0pt}
+	\setlength{\parskip}{0pt}
+	\setlength{\leftskip}{0pt}
+}
+\makeatother
+
+\makeatletter
+\let\old@enumerate=\enumerate
+\def\enumerate{\old@enumerate
+	\setlength{\itemsep}{0pt}
+	\setlength{\parskip}{0pt}
+	\setlength{\leftskip}{0pt}
+}\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% Сужение списков
+\newenvironment{itemize*}%
+{\begin{itemize}%
+		\setlength{\itemsep}{1pt}%
+		\setlength{\parskip}{1pt}}%
+	{\end{itemize}}
+
+\newenvironment{enumerate*}%
+{\begin{enumerate}%
+		\setlength{\itemsep}{1pt}%
+		\setlength{\parskip}{1pt}}%
+	{\end{enumerate}}
+%
+
+% Don't print section numbers
+%\setcounter{secnumdepth}{0}
+
+\righthyphenmin=2                       % Минимальное число символов при переносе - 2
